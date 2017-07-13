@@ -141,17 +141,17 @@ mkdir -p ${DATA_DIR}/$GENOME/seq
 ## download files
 echo "Downloading files..."
 cd ${DATA_DIR}/$GENOME
-if [[ $UMAP != "" ]]; then wget -N -c $UMAP; fi
-wget -c -O $(basename ${REF_FA}) ${REF_FA}
-if [[ $BLACKLIST != "" ]]; then wget -N -c $BLACKLIST; fi
+if [[ $UMAP != "" ]]; then wget --no-check-certificate -N -c $UMAP; fi
+wget --no-check-certificate -c -O $(basename ${REF_FA}) ${REF_FA}
+if [[ $BLACKLIST != "" ]]; then wget --no-check-certificate -N -c $BLACKLIST; fi
 mkdir -p ataqc && cd ataqc
-if [[ $TSS_ENRICH != "" ]]; then wget -N -c $TSS_ENRICH; fi
-if [[ $DNASE != "" ]]; then wget -N -c $DNASE; fi
-if [[ $PROM != "" ]]; then wget -N -c $PROM; fi
-if [[ $ENH != "" ]]; then wget -N -c $ENH; fi
-if [[ $REG2MAP != "" ]]; then wget -N -c $REG2MAP; fi
-if [[ $REG2MAP_BED != "" ]]; then wget -N -c $REG2MAP_BED; fi
-if [[ $ROADMAP_META != "" ]]; then wget -N -c $ROADMAP_META; fi
+if [[ $TSS_ENRICH != "" ]]; then wget --no-check-certificate -N -c $TSS_ENRICH; fi
+if [[ $DNASE != "" ]]; then wget --no-check-certificate -N -c $DNASE; fi
+if [[ $PROM != "" ]]; then wget --no-check-certificate -N -c $PROM; fi
+if [[ $ENH != "" ]]; then wget --no-check-certificate -N -c $ENH; fi
+if [[ $REG2MAP != "" ]]; then wget --no-check-certificate -N -c $REG2MAP; fi
+if [[ $REG2MAP_BED != "" ]]; then wget --no-check-certificate -N -c $REG2MAP_BED; fi
+if [[ $ROADMAP_META != "" ]]; then wget --no-check-certificate -N -c $ROADMAP_META; fi
 
 ## extract unique mappability tracks
 cd ${DATA_DIR}/$GENOME
